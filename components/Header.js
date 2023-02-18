@@ -10,7 +10,7 @@ const Header = () => {
     <div className="container fixed z-50 flex w-full bg-gray-500 md:justify-between h-28 md:w-full" >
       
         <div className="">
-          <Image src='/img/images.png' className="items-center justify-center h-20 shadow-gray-600 justify-items-center"
+          <Image src='/img/headerlogo.png' className="items-center justify-center h-20 shadow-gray-600 justify-items-center"
           width={80}
           height={24}
            />
