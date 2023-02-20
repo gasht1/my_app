@@ -1,8 +1,9 @@
+import axios from "axios";
 import FlowerList from "../components/FlowerList";
 import Footer from "../components/Footer";
 import Products from "../data/products";
 
-const Shop = () => {
+const Shop = ({ flowerList }) => {
   return (
     <div className="justify-center w-full h-screen m-auto text-center ">
       <h1 className="text-lg font-bold leading-4 underline uppercase">
@@ -18,14 +19,13 @@ const Shop = () => {
         the noun. <br />
       </p>
       <div className="flex flex-wrap justify-center w-full pt-20 pb-20 pl-10 pr-10 text-center wrapper">
-        {Products.map((item) => (
+        {flowerList.map((item) => (
           <FlowerList
-          key={item.id}
-
-            name={item.name}
-            image={item.image}
-            id={item.id}
-            price={item.price}
+            key={item.id}
+            name={item.title}
+            image={item.img}
+            id={item._id}
+            price={item.prices[0]}
             desc={item.desc}
           />
         ))}
@@ -36,4 +36,5 @@ const Shop = () => {
     </div>
   );
 };
+
 export default Shop;

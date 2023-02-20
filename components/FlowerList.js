@@ -1,18 +1,25 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
-import {  increment } from "../store/addToCartSlice";
+import { addProduct, increment } from "../store/cartSlice";
 
 const FlowerList = ({ image, desc, name, price, id }) => {
   const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(addProduct({ img:image, price, title:name,desc,quantity:1 }));
+
+  };
 
   return (
     <div className="w-[50%] p-10 justify-center items-center pt-20 pb-20 pl-40 pr-40 cursor-pointer border-spacing-1">
-      <Image
-        src={image}
-        className="rounded-lg shadow-md shadow-gray-500"
-        width={600}
-        height={600}
-      />
+      <Link href={`/product/${id}`} passHref >
+        <Image
+          src={image}
+          className="rounded-lg shadow-md shadow-gray-500"
+          width={600}
+          height={600}
+        />
+      </Link>
       <h1 className="items-center font-bold text-red-500 uppercase"> {name}</h1>
       <h1 className="items-center font-bold text-red-500 uppercase">
         {" "}
@@ -24,8 +31,7 @@ const FlowerList = ({ image, desc, name, price, id }) => {
       <div className="py-4">
         <button
           className="py-4 bg-red-500 rounded-lg w-28"
-          onClick={() => dispatch(increment())}
-        >
+          onClick={handleClick}        >
           add to cart
         </button>
       </div>

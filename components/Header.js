@@ -4,7 +4,8 @@ import Link from 'next/link'
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const value = useSelector((state) => state.counter.value);
+  const value = useSelector((state) => state.cart.quantity);
+
 
   return (
     <div className="container fixed z-50 flex w-full bg-gray-500 md:justify-between h-28 md:w-full" >
@@ -24,7 +25,7 @@ const Header = () => {
             <Link href='/orders/12'> <li>orders</li></Link>
             <Link href='/'  > <li>contact</li></Link>
             <Link href='/'> <li>account</li></Link>
-            <Link href='/'> <button className="uppercase"> add to cart({value})</button></Link>
+            <Link href='/cart'> <button className="uppercase"> add to cart({value})</button></Link>
           </ul>
         </div>
       </div>
