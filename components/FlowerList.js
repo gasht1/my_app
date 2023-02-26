@@ -5,10 +5,7 @@ import { addProduct, increment } from "../store/cartSlice";
 
 const FlowerList = ({ image, desc, name, price, id }) => {
   const dispatch = useDispatch();
-  const handleClick = () => {
-    dispatch(addProduct({ img:image, price, title:name,desc,quantity:1 }));
 
-  };
 
   return (
     <div className="w-[50%] p-10 justify-center items-center pt-20 pb-20 pl-40 pr-40 cursor-pointer border-spacing-1">
@@ -28,13 +25,6 @@ const FlowerList = ({ image, desc, name, price, id }) => {
       <p className="items-center font-serif font-semibold leading-4 text-gray-700">
         {desc}
       </p>
-      <div className="py-4">
-        <button
-          className="py-4 bg-red-500 rounded-lg w-28"
-          onClick={handleClick}        >
-          add to cart
-        </button>
-      </div>
     </div>
   );
 };

@@ -18,10 +18,21 @@ export default async function handler(req, res) {
     }
   }
 
-  if (method === "DELETE") {
+  if (method === "put") {
     try {
-      const product = await Product.dele(req.body);
+       await Product.create(req.body);
       res.status(201).json(product);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
+
+  if (method === "DELETE") {
+
+    try {
+      await Product.findByIdAndDelete(id);
+      res.status(200).json("this flower product has been deleted");
+
     } catch (err) {
       res.status(500).json(err);
     }
