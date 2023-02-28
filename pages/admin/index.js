@@ -9,16 +9,6 @@ const Index = ({ orders, products }) => {
   const [isAdmin, setAdmin] = useState();
   const router = useRouter();
 
-  const deleteProduct = async (id) => {
-    try {
-      const res = await axios.delete(
-        "http://localhost:3000/api/products/" + id
-      );
-      setProductsList(productsList.filter((flower) => flower._id !== id));
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
     const admin = JSON.parse(localStorage.getItem("admin"));
@@ -30,6 +20,19 @@ const Index = ({ orders, products }) => {
     }
   }, []);
 
+
+  const deleteProduct = async (id) => {
+    try {
+      const res = await axios.delete(
+        "http://localhost:3000/api/products/" + id
+      );
+      setProductsList(productsList.filter((flower) => flower._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  
   return (
     <div className="p-20 flex">
       <div className="{styles.item} flex-1">
