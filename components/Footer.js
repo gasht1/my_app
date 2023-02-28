@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="flex w-full h-screen pt-20 ">
         <div className="w-1/2 ">
-            <Image src="/img/footer.jpg" className="w-full " 
+            <Image src="/img/footer.jpg" className="w-full " alt="image" 
              width={300}
              height={300}/>
         </div>

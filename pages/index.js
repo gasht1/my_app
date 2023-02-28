@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Home from "../components/Home";
 import Shop from "../components/Shop";
 
-const index = ({data}) => {
+const Index = ({data}) => {
   const[close,setClose] = React.useState(true);
   const[admin,setAdmin] = React.useState(true);
   
@@ -42,4 +42,4 @@ export async function getServerSideProps(ctx) {
   };
 }
 
-export default index;
+export default Index;

@@ -46,7 +46,7 @@ const Product = ({ flower }) => {
       <div className="flex pt-40">
         <div className="w-1/2 p-10">
           <Image
-            src={flower.img}
+            src={flower.img} alt="image"
             className="rounded-md shadow-md shadow-orange-600"
             width={500}
             height={500}

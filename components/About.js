@@ -18,7 +18,7 @@ const about = () => {
       </div>
       <div className="w-full h-screen ">
         <Image
-          src="/../public/try.jpg"
+          src="/../public/try.jpg" alt="image"
           className="w-full h-screen"
           width={120}
           height={80}

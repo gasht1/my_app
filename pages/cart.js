@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import Header from "../components/Header";
 
-const cart = () => {
+const Cart = () => {
   const Products = useSelector((state) => state.cart.products);
   const total = useSelector((state) => state.cart.total);
   return (
@@ -22,7 +22,8 @@ const cart = () => {
             <div className="flex  gap-11" key={index}>
               <div className="relative rounded-lg w-36 h-36 shadow-orange-500">
                 <Image
-                  src={product.img}
+                  src={product.img} alt="hello"
+
                   className="relative"
                   width={500}
                   height={500}
@@ -68,4 +69,4 @@ const cart = () => {
     </>
   );
 };
-export default cart;
+export default Cart;

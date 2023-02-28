@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
-const index = ({ orders, products }) => {
+const Index = ({ orders, products }) => {
   const [productsList, setProductsList] = useState(products);
   const [ordersList, setOrdersList] = useState(orders);
   const [isAdmin, setAdmin] = useState();
@@ -50,7 +50,7 @@ const index = ({ orders, products }) => {
                 <td className="py-8">
                   <Image
                     className="rounded-lg shadow-md shadow-gray-500 "
-                    src={product.img}
+                    src={product.img} alt="hello"
                     width={100}
                     height={100}
                   />
@@ -125,4 +125,4 @@ export async function getServerSideProps(ctx) {
   };
 }
 
-export default index;
+export default Index;

@@ -11,7 +11,7 @@ const FlowerList = ({ image, desc, name, price, id }) => {
       <Link href={`/product/${id}`} passHref>
         <div className="w-[350px] h-[200px] relative">
           <Image
-            src={image}
+            src={image} alt="image"
             className=" rounded-lg shadow-md shadow-gray-500 "
             fill
             style={{ objectFit: "cover" }}

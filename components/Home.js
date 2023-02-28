@@ -51,7 +51,7 @@ const Home = () => {
           >
             <Image
               className="w-screen h-[620px] gap-3   "
-              src={img}
+              src={img} alt="image"
               width={600}
               height={400}
               style={{ objectFit: "cover" }}
