@@ -28,7 +28,7 @@ const Product = ({ flower }) => {
     if (!user) {
       router.push("/login");
     } else {
-      dispatch(addProduct({ ...flower, price, quantity }));
+      dispatch(addProduct({ ...flower, price:flower.prices[size], quantity }));
       router.push("/cart");
       await axios.post("http://localhost:3000/api/orders",{
         customerName:user.username,

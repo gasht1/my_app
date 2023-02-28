@@ -36,7 +36,7 @@ function Login() {
         <form className="mt-6">
           <div className="mb-2">
             <label
-              for="full-name"
+              htmlFor="full-name"
               className="block text-sm font-semibold text-gray-800"
             >
               full Name
@@ -50,7 +50,7 @@ function Login() {
           </div>
           <div className="mb-2">
             <label
-              for="phone-number"
+              htmlFor="phone-number"
               required
               className="block text-sm font-semibold text-gray-800"
             >

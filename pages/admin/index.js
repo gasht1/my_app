@@ -1,12 +1,13 @@
 import axios from "axios";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 const index = ({ orders, products }) => {
   const [productsList, setProductsList] = useState(products);
   const [ordersList, setOrdersList] = useState(orders);
-
-  console.log(ordersList);
+  const [isAdmin, setAdmin] = useState();
+  const router = useRouter();
 
   const deleteProduct = async (id) => {
     try {
@@ -18,6 +19,16 @@ const index = ({ orders, products }) => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    const admin = JSON.parse(localStorage.getItem("admin"));
+    if (admin) {
+      setAdmin(admin);
+    } else {
+      router.push("/admin/login");
+      setAdmin(null);
+    }
+  }, []);
 
   return (
     <div className="p-20 flex">
@@ -73,7 +84,9 @@ const index = ({ orders, products }) => {
               <th>Customer</th>
               <th>price</th>
               <th>quantity</th>
+              <th>total</th>
               <th>phone</th>
+              <th>stage</th>
             </tr>
           </tbody>
 
@@ -85,6 +98,7 @@ const index = ({ orders, products }) => {
                 <td>{item.customerName}</td>
                 <td>{item.price}</td>
                 <td>{item.quantity}</td>
+                <td>{item.quantity*item.price}</td>
                 <td>{item.phone}</td>
                 <td>
                   <button>Next Stage</button>
@@ -99,7 +113,7 @@ const index = ({ orders, products }) => {
 };
 //const {orderResponse} = await axios.get("http://localhost:3000/api/orders");
 
-export async function getServerSideProps() {
+export async function getServerSideProps(ctx) {
   const { data } = await axios.get("http://localhost:3000/api/products");
   const { data: orders } = await axios.get("http://localhost:3000/api/orders");
 

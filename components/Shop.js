@@ -5,7 +5,7 @@ import Products from "../data/products";
 
 const Shop = ({ flowerList }) => {
   return (
-    <div className="justify-center w-full h-screen m-auto text-center ">
+    <div className="justify-center w-full h-screen m-auto text-center  ">
       <h1 className="text-lg font-bold leading-4 underline uppercase">
         the best flower in town
       </h1>
@@ -18,7 +18,7 @@ const Shop = ({ flowerList }) => {
         Adjectives are words which are used to describe a noun or the nature of
         the noun. <br />
       </p>
-      <div className="flex flex-wrap justify-center w-full pt-20 pb-20 pl-10 pr-10 text-center wrapper">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center  w-full pt-20  ">
         {flowerList.map((item) => (
           <FlowerList
             key={item.id}
