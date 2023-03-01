@@ -41,7 +41,7 @@ const AddProduct = ({ setClose }) => {
     <div className="fixed top-0 left-0 right-0 bottom-0 z-50 flex h-screen  w-full  items-center justify-center bg-opacity-40 bg-clip-padding backdrop-blur-md backdrop-filter">
       <div className=" relative mx-3 h-[535px] w-full rounded-md border border-gray-400 bg-slate-100 shadow-xl md:w-[400px]">
         <div className="flex flex-col space-y-2 px-5 pt-5 ">
-          <h1 className="text-3xl font-bold text-gray-800">Add a new Pizza</h1>
+          <h1 className="text-3xl font-bold text-gray-800">Add a new flower product</h1>
           <div className="my-3 flex flex-col text-sm font-semibold">
             <label className="pb-[2px] text-sm font-semibold text-gray-800">
               Choose an image

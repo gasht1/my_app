@@ -20,11 +20,11 @@ const Header = () => {
         <div>
           <ul className="flex items-center justify-center gap-2 md:gap-3 px-6 py-12 text-xs sm:text-base md:text-lg font-bold md:leading-4 md:tracking-wider text-white uppercase cursor-pointer justify-items-end">
             <Link href='/'> <li>home</li></Link>
-            <Link href='/'> <li>about </li></Link>
-            <Link href='Product/1'> <li>shop</li></Link>
-            <Link href='/orders/12'> <li>orders</li></Link>
-            <Link href='/'  > <li>contact</li></Link>
-            <Link href='/'> <li>account</li></Link>
+            <Link href='/about'> <li>about </li></Link>
+            
+            <Link href='/cart'> <li>orders</li></Link>
+            <Link href='/contact'  > <li>contact</li></Link>
+            <Link href='/account'> <li>account</li></Link>
             <Link href='/cart'> <button className="uppercase"> add to cart({value})</button></Link>
           </ul>
         </div>

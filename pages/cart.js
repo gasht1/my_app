@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useSelector } from "react-redux";
 import Header from "../components/Header";
 
@@ -59,9 +60,11 @@ const Cart = () => {
               total : <span>{total}</span> br
             </p>
             <div className="py-6">
+              <Link href='/payment'>
               <button className="w-32 py-4 bg-red-500 rounded-lg">
                 checkout now
               </button>
+              </Link>
             </div>
           </div>
         </div>

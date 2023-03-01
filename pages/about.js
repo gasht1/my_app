@@ -1,12 +1,15 @@
 import Image from "next/image";
 import React from "react";
+import Header from "../components/Header";
 
 const about = () => {
   return (
-    <div className="absolute flex justify-between w-full h-screen my-40">
+    <>
+    <Header/>
+    <div className="absolute  w-full my-40">
       <div className="">
         <h1 className="font-semibold tracking-widest uppercase">about our website</h1>
-        <p className="w-1/2">
+        <p className="">
          Sonic Floral Imaginaries in Gondar, Ethiopia, illustrates and creates new sonics in Ethiopian floral imagination. Composed as a series of essays, graphic scores,
           and sound works, the thesis examines Ethiopia’s embodied relationships with flowers, synthesizing and transmuting existing floral discourse to create a new mode of floral discourse and creative practice in Addis Ababa’s shifting urban terrain.
 
@@ -34,16 +37,17 @@ From the flowers and Gondar, we conclude with a series of graphic scores that
 The essays gathered here tell this story of Ethiopia’s embodied relationships with flowers. The central aspiration of this writing and its accompanying sonic works is to reflect back to Ethiopians the way we imagine our relationship with landscape, as embodied in our floral imaginaries.
         </p>
       </div>
-      <div className=" float-right ">
+      <div className="  p-10">
         <Image
-          src="img/feature3.jpg" alt="image"
-          className="w-full h-screen items-center"
-          width={600}
+          src="/img/feature3.jpg" alt="image"
+          className=" w-3/4 h-screen"
+          width={1200}
           height={600}
           style={{ objectFit: "cover" }}
         />
       </div>
     </div>
+    </>
   );
 };
 
